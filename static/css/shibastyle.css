@@ -1,0 +1,15 @@
+nav{
+  background-color: orange;
+}
+
+body{
+  padding-top: 76px;
+}
+
+.container{
+  padding-top: 10px;
+}
+
+.jumbotron{
+  padding: 20px 32px 20px 32px;
+}
