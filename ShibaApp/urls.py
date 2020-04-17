@@ -16,8 +16,11 @@ Including another URLconf
 from django.urls import path
 from ShibaApp import views
 
-APP_NAME = 'ShibaApp'
+app_name = 'ShibaApp'
 
 urlpatterns = [
-    # path('', views.index, name='index'),
+    path('profile/', views.user_profile, name='user_profile'),
+    path('photos/', views.user_photos, name='user_photos'),
+    path('register/', views.newuser_register, name='newuser_register'),
+    path('friends/', views.user_friends, name='user_friends')
 ]
