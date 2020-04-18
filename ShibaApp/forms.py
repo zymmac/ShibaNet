@@ -8,9 +8,9 @@ class ShibaUserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username','email','password']
-        # widgets = {
-        #     'profile_bio': Textarea(attrs={'cols': 80, 'rows': 20}),
-        # }
+        help_texts = {
+            'username': '',
+        }
 
 class ShibaProfileForm(forms.ModelForm):
     class Meta:

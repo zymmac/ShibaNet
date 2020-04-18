@@ -2,19 +2,31 @@
 {% block title %} Login to the Shiba Network! {% endblock %}
   {% block body_block %}
   <div class="container">
-    <div class="jumbotron">
-      <h1>Please Login</h1>
+    <div class="jumbotron" style="margin=">
+      <span class='text-center'><h1>Please Login</h1></span>
 
-        <form method="post" action="{% url 'ShibaApp:user_login' %}">
-          {% csrf_token %}
-          <!-- # A more "HTML" way of creating the login form# -->
-          <label for="username">Username:</label>
-          <input type="text" name="username" placeholder="Username">
+        <form class="form-inline" action="{% url 'ShibaApp:user_login' %}" method="POST">
 
-          <label for="password"></label>
-          <input type="password" name="password">
+            {% csrf_token %}
+            <!-- # A more "HTML" way of creating the login form# -->
+              <!-- <div class="flex-fill"> -->
+              <div class="form-row flex-fill">
+                  <div class="input-group mb-2 mr-2 ml-lg-auto">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">@</div>
+                    </div>
+                    <input type="text" name="username" class="form-control" placeholder="Username">
+                  </div>
 
-          <input type="submit" name="" value="Login">
+                  <input type="password" name="password" class="form-control mb-2 mr-4" placeholder="Password">
+
+                <input type="submit" class="btn btn-outline-dark mr-lg-auto" name="" value="Login">
+              </div>
+              <!-- </div> -->
+
+
+
+
 
         </form>
 
