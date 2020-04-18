@@ -1,5 +1,24 @@
 {% extends 'ShibaApp/base.html' %}
 {% block title %} Login to the Shiba Network! {% endblock %}
   {% block body_block %}
-  <h1>Login Page</h1>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Please Login</h1>
+
+        <form method="post" action="{% url 'ShibaApp:user_login' %}">
+          {% csrf_token %}
+          <!-- # A more "HTML" way of creating the login form# -->
+          <label for="username">Username:</label>
+          <input type="text" name="username" placeholder="Username">
+
+          <label for="password"></label>
+          <input type="password" name="password">
+
+          <input type="submit" name="" value="Login">
+
+        </form>
+
+    </div>
+  </div>
+
   {% endblock %}

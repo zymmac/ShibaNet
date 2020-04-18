@@ -22,5 +22,7 @@ urlpatterns = [
     path('profile/', views.user_profile, name='user_profile'),
     path('photos/', views.user_photos, name='user_photos'),
     path('register/', views.newuser_register, name='newuser_register'),
-    path('friends/', views.user_friends, name='user_friends')
+    path('friends/', views.user_friends, name='user_friends'),
+    path('login/',views.user_login,name='user_login'),
+    path('logout/', views.user_logout, name='user_logout'),
 ]

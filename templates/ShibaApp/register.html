@@ -1,5 +1,29 @@
 {% extends 'ShibaApp/base.html' %}
 {% block title %} Register now to the Shiba Network! {% endblock %}
   {% block body_block %}
-  <h1>Register Page</h1>
+
+
+  {% if Registered %}
+    <meta http-equiv="refresh" content="3;url={% url 'ShibaApp:user_profile' %}" />
+    <h1>Thank you for registering!</h1>
+    <h3>You will be redirect in a few seconds...</h3>
+  {% else %}
+
+    <h1>Register Page</h1>
+    <!-- enctype="multipart/form-data"
+    No characters are encoded. This value is required when forms have FILE UPLOAD CONTROL -->
+    <form enctype="multipart/form-data" method="POST">
+      <div class="form-group">
+        {% csrf_token %}
+        {{ ShibaUserForm.as_p }}
+        {{ ShibaProfileForm.as_p}}
+        <input type="submit" name="" value="Register">
+      </div>
+    </form>
+  {% endif %}
+
+
+
+
+
   {% endblock %}

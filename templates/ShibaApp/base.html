@@ -43,12 +43,18 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'user_login' %}">Login</a>
+          <a class="nav-link" href="{% url 'ShibaApp:user_logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'ShibaApp:user_login' %}">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'ShibaApp:newuser_register' %}">Register</a>
         </li>
+        {% endif %}
       </ul>
 
     </div>
